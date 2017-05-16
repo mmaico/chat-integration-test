@@ -6,18 +6,21 @@ describe("Fluxo de envio e recebimento de mensages", function() {
 		client = Stomp.overWS('ws://localhost:8181/chat-server');
 	});
 
-	it("client shoud not null", function(done) {
-		done();
+	it("client shoud not null", function(done) {		
 		console.log("################## ---> ENTER");
-
-		client.connect("teste", "teste", 
+		
+		client.connect( 
 			function(frame) {
-				console.log("################## ---> SUCCESS");			
+				console.log("################## ---> SUCCESS");
+				done();			
 			},
 			function(error) {
-				console.log("################## ---> ERROR");	
+				console.log("################## ---> ERROR");
+				done();	
 			});		
-	});	
+		
+		expect(client).not.toBe(null);
+	}, 20000);	
 
-	expect(client).not.toBe(null);
+	
 });

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jasmine": "^2.6.0",
+    "sockjs-client": "^1.1.4",
     "stompjs": "^2.3.3"
   }
 }
